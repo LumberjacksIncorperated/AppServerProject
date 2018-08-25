@@ -1,0 +1,58 @@
+worker_processes  5;
+worker_rlimit_nofile 8192;
+
+events {
+    worker_connections  4096;
+}
+
+http {
+    include  mime.types;
+    index  index.php;
+
+    default_type  application/octet-stream;
+
+    sendfile        on;
+    tcp_nopush   on;
+
+    #keepalive_timeout  65;
+    server_names_hash_bucket_size 128;
+
+    server {
+        listen       80;
+        server_name  localhost;
+
+        root /Users/developer/Desktop/AppServerProject/web_server_root_directory;
+
+        location ~ \.php$ {
+            include fastcgi_params;
+            fastcgi_pass   127.0.0.1:2342;
+            fastcgi_index index.php;
+            #root   /Users/developer/Desktop/AppServerProject/web_server_root_directory;
+            #fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+        }
+
+	   #location ~ \.php$ {
+        #    fastcgi_pass   127.0.0.1:1025;
+        #}
+
+	    #location / {
+        #    autoindex on;
+        #    index  index.php;
+        #    root   /Users/developer/Desktop/AppServerProject/web_server_root_directory;
+        #}
+        
+        #location ~ \.php$ {
+       #     root   /Users/developer/Desktop/AppServerProject/web_server_root_directory;
+	    #    fastcgi_split_path_info ^(.+\.php)(/.+)$;
+	   #    fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+        #    if (-f $request_filename) {
+	    #        fastcgi_pass   127.0.0.1:9000;
+        #    }
+	    #    include fastcgi_params;
+        #}
+
+        #error_page  403 404              /404.php;
+
+    }
+}

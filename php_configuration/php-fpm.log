@@ -1,0 +1,20 @@
+
+
+[22-Aug-2018 21:25:57] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[22-Aug-2018 21:25:57] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[22-Aug-2018 21:25:57] NOTICE: fpm is running, pid 36270
+[22-Aug-2018 21:25:57] NOTICE: ready to handle connections
+[22-Aug-2018 21:26:02] ERROR: [pool www] cannot get uid for user 'www-data'
+[22-Aug-2018 21:26:02] ERROR: FPM initialization failed
+[22-Aug-2018 21:26:23] ERROR: unable to bind listening socket for address '127.0.0.1:9000': Address already in use (48)
+[22-Aug-2018 21:26:23] ERROR: FPM initialization failed
+[22-Aug-2018 21:26:42] WARNING: [pool www] child 36272 exited on signal 9 (SIGKILL) after 45.844349 seconds from start
+[22-Aug-2018 21:26:42] NOTICE: [pool www] child 36288 started
+[22-Aug-2018 21:26:47] WARNING: [pool www] child 36271 exited on signal 9 (SIGKILL) after 50.044724 seconds from start
+[22-Aug-2018 21:26:47] NOTICE: [pool www] child 36289 started
+[22-Aug-2018 21:27:10] NOTICE: fpm is running, pid 36301
+[22-Aug-2018 21:27:10] NOTICE: ready to handle connections
+[22-Aug-2018 21:54:28] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[22-Aug-2018 21:54:28] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[22-Aug-2018 21:54:28] NOTICE: fpm is running, pid 37040
+[22-Aug-2018 21:54:28] NOTICE: ready to handle connections
