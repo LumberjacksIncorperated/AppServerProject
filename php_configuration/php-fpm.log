@@ -18,3 +18,11 @@
 [22-Aug-2018 21:54:28] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
 [22-Aug-2018 21:54:28] NOTICE: fpm is running, pid 37040
 [22-Aug-2018 21:54:28] NOTICE: ready to handle connections
+[28-Aug-2018 14:52:00] NOTICE: Terminating ...
+[28-Aug-2018 14:52:00] NOTICE: Terminating ...
+[28-Aug-2018 14:52:00] NOTICE: exiting, bye-bye!
+[28-Aug-2018 14:52:00] NOTICE: exiting, bye-bye!
+[28-Aug-2018 21:13:51] NOTICE: [pool www] 'user' directive is ignored when FPM is not running as root
+[28-Aug-2018 21:13:51] NOTICE: [pool www] 'group' directive is ignored when FPM is not running as root
+[28-Aug-2018 21:13:51] NOTICE: fpm is running, pid 1459
+[28-Aug-2018 21:13:51] NOTICE: ready to handle connections

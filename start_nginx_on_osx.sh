@@ -1,4 +1,37 @@
 #!/bin/sh
-workingDirectory=$(pwd)
-nginxConfigurationFile="${workingDirectory}/nginx_configuration/nginx_mac.conf"
-sudo nginx -c "$nginxConfigurationFile" 
+
+#------------------------------------------------------------------------------------------
+#
+# PURPOSE
+# -------
+# Start nginx server for MyServerApplication
+#
+# AUTHOR
+# ------
+# Lumberjacks Incorperated (2018)
+#
+#------------------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------------------
+# MAIN
+#------------------------------------------------------------------------------------------
+main()
+{
+	echo "Staring Nginx Server...."
+	startNginxServer
+}
+
+#------------------------------------------------------------------------------------------
+# INTERNAL FUNCTIONS
+#------------------------------------------------------------------------------------------
+function startNginxServer()
+{
+	workingDirectory=$(pwd)
+	nginxConfigurationFile="${workingDirectory}/nginx_configuration/nginx_mac.conf"
+	sudo nginx -c "$nginxConfigurationFile" 
+}
+
+#------------------------------------------------------------------------------------------
+# SCRIPT
+#------------------------------------------------------------------------------------------
+    main

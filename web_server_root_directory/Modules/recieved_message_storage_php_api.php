@@ -1,18 +1,18 @@
 <?php
-
-//----------------------------------------
-// AUTHOR: Lumberjacks Incorperated (2018)
-//----------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+// AUTHOR
+// -------
+// Lumberjacks Incorperated (2018)
+//--------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------- 
 // INCLUDES
 //---------------------------------------- 
-include 'my_application_database_php_api.php';
+include_once 'my_application_database_php_api.php';
 
 //---------------------------------------- 
-// FUNCTIONS
+// EXPOSED FUNCTTIONS
 //---------------------------------------- 
-
 	function addMessageToMessagesStorageWithMessageTextAndIPAddressOrigin($messageText, $ipAddressOriginOfMessage) {
 		if ($messageText && $ipAddressOriginOfMessage) {
 			$sanitisedMessageText = sanitiseStringForSQLQuery($messageText);

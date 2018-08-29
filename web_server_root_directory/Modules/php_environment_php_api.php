@@ -1,11 +1,12 @@
 <?php
-
-//----------------------------------------
-// AUTHOR: Lumberjacks Incorperated (2018)
-//----------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+// AUTHOR
+// -------
+// Lumberjacks Incorperated (2018)
+//--------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------- 
-// FUNCTTIONS
+// EXPOSED FUNCTTIONS
 //---------------------------------------- 
     function getConnectedClientIPAddress() {
         $ipaddress = '';
@@ -26,4 +27,7 @@
         return $ipaddress;
     }
 
+    function getMessageFieldContentsFromCurrentClientRequest() {
+        return $_REQUEST['message'];
+    }
 ?>

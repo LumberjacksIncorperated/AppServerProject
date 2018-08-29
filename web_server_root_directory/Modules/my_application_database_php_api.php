@@ -1,11 +1,12 @@
 <?php
-
-//----------------------------------------
-// AUTHOR: Lumberjacks Incorperated (2018)
-//----------------------------------------
+//--------------------------------------------------------------------------------------------------------------
+// AUTHOR
+// -------
+// Lumberjacks Incorperated (2018)
+//--------------------------------------------------------------------------------------------------------------
 
 //---------------------------------------- 
-// FUNCTTIONS
+// INTERNAL FUNCTTIONS
 //---------------------------------------- 
 	function _makeConnectionToMyApplicationDatabase() {
 		$connectionToMyApplicationDatabase = new mysqli("127.0.0.1", "root", "password", "my_application_database");
@@ -24,12 +25,15 @@
 	function _fetchDataFromQueryResult($queryResult) {
 		$fetchedData = NULL;
 		if ($queryResult) {
-			$fetchedData = $queryResult->fetch_all();
+			$fetchedData = $queryResult->fetch_assoc();
 			$queryResult->close();
 		}	
 		return $fetchedData;
 	}
 
+//---------------------------------------- 
+// EXPOSED FUNCTTIONS
+//---------------------------------------- 
 	function fetchDataByMakingSQLQuery($queryToFetchData) {
 		$connectionToMyApplicationDatabase = _makeConnectionToMyApplicationDatabase();
 		$resultOfQuery = $connectionToMyApplicationDatabase->query($queryToFetchData);
@@ -39,7 +43,6 @@
 	}
 
 	function modifyDataByMakingSQLQuery($queryToModifyData) {
-		//echo $queryToModifyData;
 		$connectionToMyApplicationDatabase = _makeConnectionToMyApplicationDatabase();
 		$resultOfQuery = $connectionToMyApplicationDatabase->query($queryToModifyData);
 		_closeConnectionToMyApplicationDatabase($connectionToMyApplicationDatabase);
