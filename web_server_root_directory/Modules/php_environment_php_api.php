@@ -28,6 +28,23 @@
     }
 
     function getMessageFieldContentsFromCurrentClientRequest() {
-        return $_REQUEST['message'];
+        $messageFieldContentsOfCurrentHTTPRequest = '';
+        if (isset($_REQUEST['message']))
+            $messageFieldContentsOfCurrentHTTPRequest = $_REQUEST['message'];
+        return $messageFieldContentsOfCurrentHTTPRequest;
+    }
+
+    function getPasswordFieldContentsFromCurrentClientRequest() {
+        $passwordFieldContentsOfCurrentHTTPRequest = '';
+        if (isset($_REQUEST['password']))
+            $passwordFieldContentsOfCurrentHTTPRequest = $_REQUEST['password'];
+        return $passwordFieldContentsOfCurrentHTTPRequest;
+    }
+
+    function getUsernameFieldContentsFromCurrentClientRequest() {
+        $usernameFieldContentsOfCurrentHTTPRequest = '';
+        if (isset($_REQUEST['username']))
+            $usernameFieldContentsOfCurrentHTTPRequest = $_REQUEST['username'];
+        return $usernameFieldContentsOfCurrentHTTPRequest;
     }
 ?>

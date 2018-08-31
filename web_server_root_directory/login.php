@@ -3,7 +3,7 @@
 //
 // PURPOSE
 // -------
-// Take a client request containing a message, and add that message to a local message storage 
+// To login
 //
 // AUTHOR
 // -------
@@ -20,16 +20,13 @@ include_once dirname(__FILE__).'/Modules/secured_session_php_api.php';
 //---------------------------------------- 
 // SCRIPT
 //---------------------------------------- 
-	if (!ensureThisIsASecuredSession()) {
-		echo 'You are not allowed to send messages unless you are logged into a secure session';
-		die();
+	$username = getUsernameFieldContentsFromCurrentClientRequest();
+	$password = getPasswordFieldContentsFromCurrentClientRequest();
+	$loginSessionKey = getSessionKeyForNewSessionWithUsernameAndPassword($username, $password);
+	if ($loginSessionKey) {
+		echo $loginSessionKey;
+	} else {
+		echo 'Failed to login, incorrect username and password';
 	}
 
-	$messageText = getMessageFieldContentsFromCurrentClientRequest();
-	$ipAddressOriginOfMessage = getConnectedClientIPAddress();
-	addMessageToMessagesStorageWithMessageTextAndIPAddressOrigin($messageText, $ipAddressOriginOfMessage);
-
-	echo 'Successfully sent a message, WOO';
-
 ?>
-
